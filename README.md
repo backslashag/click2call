@@ -9,11 +9,9 @@ different spellings of numbers.
 
 the plugin is created as a configuration, so you don't have to overwrite the defaults-values directly in script.
 
-you can specify the "regex" and then the script is searching numbers with this specified regex. 
-the other option is that you will specify the country and the area code to search the numbers. you can't do both.
 
 ###the default-values look like this:
-
+{
 defaults : 
 	{
 		'country': "ch",
@@ -26,4 +24,28 @@ defaults :
 		'countryDefinitions' : ""
 		
 	}
+}
+<b> declaration: </b>
+
+country: self-explanatory
+landwahl: area code
+linktitle: is the title-tag of the replaced number - link
+linkclass: is the class-tag of the replaced number - link
+regexp: is the regular expression
+excluderaw:
+excludeint:
+countrydefinition: are the definitions of the specifig country
+
+
+###overwriting default-values
+
+you can simply overwrite the default-values:
+
+var xyz = phonenumber.init( {'country' : 'de', 'landwahl': '+31', .. and so on ..} );
+
+
+###important
+
+you can specify the "regex" and then the script is searching numbers with this specified regex. 
+the other option is that you will specify the country and the area code to search the numbers. you can't do both.
 
