@@ -21,20 +21,19 @@ the plugin is created as a configuration, so you don't have to overwrite the def
 			'regexp': "",
 			'excluderaw': "",
 			'excludeint': "",
-			'countryDefinitions' : ""
-			
+			'countryDefinitions' : ""	
 		}
 	
 <b> declaration: </b>
 
-country: self-explanatory
-landwahl: area code
-linktitle: is the title-tag of the replaced number - link
-linkclass: is the class-tag of the replaced number - link
-regexp: is the regular expression
-excluderaw:
-excludeint:
-countrydefinition: are the definitions of the specifig country
+<p>country: self-explanatory</p>
+<p>landwahl: area code</p>
+<p>linktitle: is the title-tag of the replaced number - link</p>
+<p>linkclass: is the class-tag of the replaced number - link</p>
+<p>regexp: is the regular expression</p>
+<p>excluderaw:</p>
+<p>excludeint:</p>
+<p>countrydefinition: are the definitions of the specifig country</p>
 
 
 ###overwriting default-values
