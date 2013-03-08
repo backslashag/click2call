@@ -11,20 +11,20 @@ the plugin is created as a configuration, so you don't have to overwrite the def
 
 
 ###the default-values look like this:
-{
-defaults : 
-	{
-		'country': "ch",
-		'landwahl': "+41",
-		'linktitle': "",
-		'linkclass': "",
-		'regexp': "",
-		'excluderaw': "",
-		'excludeint': "",
-		'countryDefinitions' : ""
-		
-	}
-}
+
+	defaults : 
+		{
+			'country': "ch",
+			'landwahl': "+41",
+			'linktitle': "",
+			'linkclass': "",
+			'regexp': "",
+			'excluderaw': "",
+			'excludeint': "",
+			'countryDefinitions' : ""
+			
+		}
+	
 <b> declaration: </b>
 
 country: self-explanatory
