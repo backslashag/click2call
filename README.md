@@ -1,7 +1,7 @@
 click2call
 ----------------------------
 
-<h2> Informations </h2>
+<h3> Informations </h3>
 
 click2call is a plugin for highlighting phone-numbers for mobile-devices. So you can simply click on a number to start a call. 
 It is searching several numbers on a page and it will mark the numbers. in special cases it would not find all numbers, because there are to much
