@@ -14,7 +14,8 @@ the other option is that you will specify the country and the area code to searc
 
 ###the default-values look like this:
 
-defaults : {
+defaults : 
+	{
 		'country': "ch",
 		'landwahl': "+41",
 		'linktitle': "",
