@@ -88,7 +88,7 @@ var phonenumber = {
 		console.log(phonenumber.defaults['auto']);
 		if(!phonenumber.defaults['auto']){
 			//simple method with just a user defined regex
-			var test = phonenumber.countryDefinitions[phonenumber.defaults.country[c]].regex[r];
+			var test = phonenumber.defaults['regexp'];
 			var result = text.match(test);
 			if(result){
 				
