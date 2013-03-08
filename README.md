@@ -26,14 +26,14 @@ the plugin is created as a configuration, so you don't have to overwrite the def
 	
 <b> declaration: </b>
 
-<p>country: self-explanatory</p>
-<p>landwahl: area code</p>
-<p>linktitle: is the title-tag of the replaced number - link</p>
-<p>linkclass: is the class-tag of the replaced number - link</p>
-<p>regexp: is the regular expression</p>
-<p>excluderaw:</p>
-<p>excludeint:</p>
-<p>countrydefinition: are the definitions of the specifig country</p>
+	<p>country: self-explanatory</p>
+	<p>landwahl: area code</p>
+	<p>linktitle: is the title-tag of the replaced number - link</p>
+	<p>linkclass: is the class-tag of the replaced number - link</p>
+	<p>regexp: is the regular expression</p>
+	<p>excluderaw:</p>
+	<p>excludeint:</p>
+	<p>countrydefinition: are the definitions of the specifig country</p>
 
 
 ###overwriting default-values
