@@ -12,9 +12,17 @@ the plugin is created as a configuration, so you don't have to overwrite the def
 you can specify the "regex" and then the script is searching numbers with this specified regex. 
 the other option is that you will specify the country and the area code to search the numbers. you can't do both.
 
-ZE64LK1C
-
 the default-values look like this:
 
-<script src="http://pastebin.com/embed_js.php?i=ZE64LK1C"></script>
+defaults : {
+		'country': "ch",
+		'landwahl': "+41",
+		'linktitle': "",
+		'linkclass': "",
+		'regexp': "",
+		'excluderaw': "",
+		'excludeint': "",
+		'countryDefinitions' : ""
+		
+	}
 
