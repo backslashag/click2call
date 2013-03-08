@@ -10,7 +10,7 @@ var phonenumber = {
 		'excluderaw': "",
 		'excludeint': "",
 		'countryDefinitions' : ""
-		
+
 	},
 	init : function (config) {
 		var prop;
@@ -34,7 +34,7 @@ var phonenumber = {
 		phonenumber.defaults['excluderaw'] = phonenumber.defaults['excluderaw'].split(',');
 		phonenumber.defaults['excludeint'] = phonenumber.defaults['excludeint'].split(',');
 		phonenumber.defaults['country'] = phonenumber.defaults['country'].split(',');
-		
+
 		phonenumber._linkstring = "";
 		if(phonenumber.defaults.linktitle!="" ){
 			phonenumber._linkstring += "title='"+phonenumber.defaults.linktitle+"'";
@@ -44,7 +44,7 @@ var phonenumber = {
 			}
 		return this;
 	},
-	
+
 	countryDefinitions : {
 		'ch' : {'regex': [/(\+[0-9]{2}(\s|-|'|\+|\/))?(\(?0\)?)?[1-9]{2}(\s|-|'|\+|\/)?[0-9]{3}(\s|-|'|\+|\/)?[0-9]{2}(\s|-|'|\+|\/)?[0-9]{2}/g, /(\+[0-9]{2}(\s|-|'|\+|\/))?(\(?0\)?)?8[0-9]{2}(\s|-|'|\+|\/)?[0-9]{3}(\s|-|'|\+|\/)?[0-9]{3}/g ],
 		'landwahl': '+41'
@@ -57,13 +57,13 @@ var phonenumber = {
 			if ( phonenumber.defaults.excluderaw.indexOf(str) < 0 ){
 				// delete whitespaces
 				var phoneNumber = str.replace(/\(0\)/g,'');
-				//replace all instead of 
+				//replace all instead of
 				phoneNumber = phoneNumber.replace(/[^0-9\+]/g, '');
-											
+
 				if(phoneNumber.substr(0,1) == "0"){
 					phoneNumber = landvorwahl + phoneNumber.substr(1, phoneNumber.length);
 					}
-											
+
 				// if there are calling codes
 				if(vorwahllength){
 					// if there isn't a "plus"
@@ -71,31 +71,31 @@ var phonenumber = {
 						phoneNumber = landvorwahl + phoneNumber;
 						}
 					}
-										
+
 				if ( phonenumber.defaults.excludeint.indexOf(phoneNumber) < 0 ){
 					//creating a tag
-					text = text.replace(new RegExp(str, 'g'), "<a href='tel:"+phoneNumber+"'"+phonenumber._linkstring+" >"+str+"</a>");
+					var newText = "<a href=\"tel:"+phoneNumber+"\" "+phonenumber._linkstring+" >"+str+"</a>";
+					text = text.replace(str, newText);
 					}
 				}
 			}
 		return text;
 		},
-	
+
 	activate : function (){
 
 		var element = document.getElementsByTagName("body")[0];
 		var text = element.innerHTML;
-		console.log(phonenumber.defaults['auto']);
 		if(!phonenumber.defaults['auto']){
 			//simple method with just a user defined regex
 			var test = phonenumber.defaults['regexp'];
 			var result = text.match(test);
 			if(result){
-				
+
 				var landvorwahl = phonenumber.countryDefinitions['landwahl'];
 				//loop result;
 				text = phonenumber._replaceNumbers(text, result, landvorwahl);
-						
+
 				}
 			}
 		else{
@@ -111,11 +111,11 @@ var phonenumber = {
 							//loop result;
 							text = phonenumber._replaceNumbers(text, result, landvorwahl);
 							}
-							
+
 						}
 					}
 				}
-			
+
 			}
 			// write back
 			element.innerHTML = text;
