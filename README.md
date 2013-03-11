@@ -40,7 +40,7 @@ the plugin is created as a configuration, so you don't have to overwrite the def
 
 you can simply overwrite the default-values:
 
-var xyz = phonenumber.init( {'country' : 'de', 'landwahl': '+31', .. and so on ..} );
+	var xyz = phonenumber.init( {'country' : 'de', 'landwahl': '+31', .. and so on ..} );
 
 
 ###important
