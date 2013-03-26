@@ -47,7 +47,7 @@ you can simply overwrite the default-values:
 Please visit the demo / test cases:
 * [Swiss](http://htmlpreview.github.com/?https://raw.github.com/backslashag/click2call/master/exampleCountryNumbers/click2call_CH.html)
 * [German](http://htmlpreview.github.com/?https://raw.github.com/backslashag/click2call/master/exampleCountryNumbers/click2call_DE.html)
-* [US](http://htmlpreview.github.com/?https://raw.github.com/backslashag/click2call/master/exampleCountryNumbers/click2call_EN.html)
+* [US](http://htmlpreview.github.com/?https://raw.github.com/backslashag/click2call/master/exampleCountryNumbers/click2call_USA.html)
 
 ###important
 
