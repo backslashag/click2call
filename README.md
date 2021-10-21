@@ -10,7 +10,7 @@ different spellings of numbers.
 the plugin is created as a configuration, so you don't have to overwrite the defaults-values directly in script.
 
 
-###the default-values look like this:
+### the default-values look like this:
 
 	defaults : 
 		{
@@ -36,7 +36,7 @@ the plugin is created as a configuration, so you don't have to overwrite the def
 	<p>countrydefinition: are the definitions of the specifig country</p>
 
 
-###overwriting default-values
+### overwriting default-values
 
 you can simply overwrite the default-values:
 
@@ -49,7 +49,7 @@ Please visit the demo / test cases:
 * [German](http://htmlpreview.github.com/?https://raw.github.com/backslashag/click2call/master/exampleCountryNumbers/click2call_DE.html)
 * [US](http://htmlpreview.github.com/?https://raw.github.com/backslashag/click2call/master/exampleCountryNumbers/click2call_USA.html)
 
-###important
+### important
 
 you can specify the "regex" and then the script is searching numbers with this specified regex. 
 the other option is that you will specify the country and the area code to search the numbers. you can't do both.
