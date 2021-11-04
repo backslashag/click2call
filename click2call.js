@@ -1,5 +1,5 @@
 // click2call, activates phone number on smartphones
-// changelog: replacing now done in text nodes only, not in plain html code
+// version: 1.2
 
 var phonenumber = {
 	defaults : {
@@ -48,8 +48,7 @@ var phonenumber = {
 		countryDefinitions : {
 			'ch' : {
 				'regex': [
-					/(\+[0-9]{2}(\s|-|'|\+|\/))?(\(?0\)(\s)?)?[1-9]{2}(\s|-|'|\+|\/)?[0-9]{3}(\s|-|'|\+|\/)?[0-9]{2}(\s|-|'|\+|\/)?[0-9]{2}/g,
-					/(\+[0-9]{2}(\s|-|'|\+|\/))?(\(?0\)?)?8[0-9]{2}(\s|-|'|\+|\/)?[0-9]{3}(\s|-|'|\+|\/)?[0-9]{3}/g
+					/([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])|^(([0][0]|\+)[1-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])/g
 				],
 				'landwahl': '+41'
 			}
@@ -124,37 +123,38 @@ var phonenumber = {
 			for (var i = 0; i < textnodes.length; i++) {
 				
 				var textnode = textnodes[i];
-				
-				if(!phonenumber.defaults['auto']){
-					//simple method with just a user defined regex
-					var test = phonenumber.defaults['regexp'];
-					var result = textnode.node.nodeValue.match(test);
-					if(result){
-		
-						var landvorwahl = phonenumber.countryDefinitions['landwahl'];
+				var textValue = textnode.node.nodeValue;
+                if (textValue){
+					if(!phonenumber.defaults['auto']){
+						//simple method with just a user defined regex
+						var test = phonenumber.defaults['regexp'];
+						var result = textValue.match(test);
+						if(result){
+			
+							var landvorwahl = phonenumber.countryDefinitions['landwahl'];
 
-						phonenumber._processNode(textnode, result, landvorwahl);
-		
-					}
-				} else{
-					//complex method: use a structure with country-defintions
-					for(var c=0; c<phonenumber.defaults['country'].length; c++){
-						if( typeof phonenumber.countryDefinitions[phonenumber.defaults.country[c]] != 'undefined' ){
-							for(var r=0; r<phonenumber.countryDefinitions[phonenumber.defaults.country[c]].regex.length; r++){
-								var test = phonenumber.countryDefinitions[phonenumber.defaults.country[c]].regex[r];
-								var result = textnode.node.nodeValue.match(test);
-								if(result){
-									// length calling code
-									var landvorwahl = phonenumber.countryDefinitions[phonenumber.defaults.country[c]].landwahl;
+							phonenumber._processNode(textnode, result, landvorwahl);
+			
+						}
+					} else{
+						//complex method: use a structure with country-defintions
+						for(var c=0; c<phonenumber.defaults['country'].length; c++){
+							if( typeof phonenumber.countryDefinitions[phonenumber.defaults.country[c]] != 'undefined' ){
+								for(var r=0; r<phonenumber.countryDefinitions[phonenumber.defaults.country[c]].regex.length; r++){
+									var test = phonenumber.countryDefinitions[phonenumber.defaults.country[c]].regex[r];
+									var result = textValue.match(test);
+									if(result){
+										// length calling code
+										var landvorwahl = phonenumber.countryDefinitions[phonenumber.defaults.country[c]].landwahl;
 
-									phonenumber._processNode(textnode, result, landvorwahl);
+										phonenumber._processNode(textnode, result, landvorwahl);
+										}
+			
 									}
-		
 								}
-							}
+						}
 					}
 				}
-				
 			}
 		}
 	};
@@ -173,4 +173,3 @@ var phonenumber = {
 		return -1;
 	};
 }
-  
